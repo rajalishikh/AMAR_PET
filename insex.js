@@ -1,8 +1,9 @@
 console.log('javaScript part start')
+// bring the data
 const bring_data=async()=>{
     const load_data=await fetch('https://openapi.programming-hero.com/api/peddy/pets')
     const convert_json=await load_data.json()
-    convert_json.pets.slice(0,3).forEach((pet)=>{
+    convert_json.pets.slice(0,9).forEach((pet)=>{
         console.log(pet)
         const get_container=document.getElementById('main_container')
         const crete_div=document.createElement('div')
@@ -10,16 +11,69 @@ const bring_data=async()=>{
         <div class="card bg-base-100 w-80 shadow-xl my-hr h-auto">
                 <figure class="px-10 pt-10">
                   <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                    src="${pet.image}"
                     alt="Shoes"
                     class="rounded-xl"
                   />
                 </figure>
-                <div class="card-body items-center">
-                  <h2 class="card-title">Shoes!</h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div class="card-body">
+                  <h2 class="text-black font-bold text-left text-xl">${pet?.pet_name?`${pet.pet_name}` :"unh"}</h2>
+                //   first card
+                  <div class="flex items-center gap-1">
+                  <div>
+                    <img
+                      class="w-9"
+                      src="images/fox_1984462.png"
+                      alt=""
+                      srcset=""
+                    />
+                  </div>
+                  <div>
+                    <p class="text-[#131313B3]">Breed:${pet.breed?`${pet.breed}`:"Undefined"}</p>
+                  </div>
+                </div>
+                <!-- second card -->
+                <div class="flex items-center gap-1">
+                  <div>
+                    <img
+                      class="w-9"
+                      src="images/calendar_747310.png"
+                      alt=""
+                      srcset=""
+                    />
+                  </div>
+                  <div>
+                    <p class="text-[#131313B3]">Birth:${pet?.date_of_birth?`${pet?.date_of_birth}`:"Undefined"}</p>
+                  </div>
+                </div>
+                <!-- Third -->
+                <div class="flex items-center gap-1">
+                  <div>
+                    <img
+                      class="w-9"
+                      src="images/icons8-gender-50.png"
+                      alt=""
+                      srcset=""
+                    />
+                  </div>
+                  <div>
+                    <p class="text-[#131313B3]">Gender:${pet?.gender?`${pet?.gender}`:'Undefined'}</p>
+                  </div>
+                </div>
+                <!-- fourth -->
+                <div class="flex items-center gap-1">
+                  <div>
+                    <img
+                      class="w-9"
+                      src="images/icons8-price.gif"
+                      alt=""
+                      srcset=""
+                    />
+                  </div>
+                  <div>
+                    <p class="text-[#131313B3]">price:${pet?.price?`${pet?.price}`:"Undefined"}</p>
+                  </div>
+                </div>
                   <hr width="100%" />
 
                   <div class="card-actions">
