@@ -9,6 +9,7 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       * {
@@ -65,11 +66,13 @@
             <!-- button section -->
             <div>
               <div>
-                <button
-                  class="p-3 bg-[#0E7A81] rounded-xl text-white font-medium mt-2"
-                >
-                  View More
-                </button>
+                <a href="#id">
+                  <button
+                    class="p-3 bg-[#0E7A81] rounded-xl text-white font-medium mt-2"
+                  >
+                    View More
+                  </button>
+                </a>
               </div>
             </div>
             <img src="images/pet.webp" alt="" srcset="" />
@@ -78,7 +81,7 @@
       </section>
       <!-- Home section end -->
       <!-- main section -->
-      <section class="flex justify-center">
+      <section id="id" class="flex justify-center">
         <div>
           <!-- types of pet start -->
           <div>
@@ -100,8 +103,9 @@
               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-2"
             >
               <!-- first -->
-              <div
-                class="flex items-center justify-center border border-[#0E7A8126] rounded-md"
+              <button
+                onclick="bring_load_data_id('1')"
+                class="active flex items-center justify-center border border-[#0E7A8126] rounded-md"
               >
                 <img
                   src="images/icons8-dog-size-small-100.png"
@@ -109,11 +113,14 @@
                   srcset=""
                   class="w-14"
                 />
-                <p class="text-black font-bold">Dogs</p>
-              </div>
+                <p id="name_input2222" class="text-black font-bold name_input">
+                  Dogs
+                </p>
+              </button>
               <!-- second -->
-              <div
-                class="flex items-center justify-center border border-[#0E7A8126] rounded-md"
+              <button
+                onclick="bring_load_data_id('2')"
+                class="active flex items-center justify-center border border-[#0E7A8126] rounded-md"
               >
                 <img
                   src="images/icons8-cat-with-tears-of-joy-48.png"
@@ -121,11 +128,12 @@
                   srcset=""
                   class="w-14"
                 />
-                <p class="text-black font-bold">Cats</p>
-              </div>
+                <p id="name_input2" class="text-black font-bold">Cats</p>
+              </button>
               <!-- Third -->
-              <div
-                class="flex items-center justify-center p-3 border border-[#0E7A8126] rounded-md"
+              <button
+                onclick="bring_load_data_id('4')"
+                class="active flex items-center justify-center p-3 border border-[#0E7A8126] rounded-md"
               >
                 <img
                   src="images/icons8-save-rabbits-50.png"
@@ -133,10 +141,12 @@
                   srcset=""
                   class="w-14"
                 />
-                <p class="text-black font-bold">Rabbits</p>
-              </div>
-              <div
-                class="flex items-center justify-center p-3 border border-[#0E7A8126] rounded-md"
+                <p id="name_input3" class="text-black font-bold">Rabbits</p>
+              </button>
+              <!-- fourth -->
+              <button
+                onclick="bring_load_data_id('4')"
+                class="active flex items-center justify-center p-3 border border-[#0E7A8126] rounded-md"
               >
                 <img
                   src="images/icons8-hummingbird-50.png"
@@ -144,8 +154,8 @@
                   srcset=""
                   class="w-14"
                 />
-                <p class="text-black font-bold">Birds</p>
-              </div>
+                <p id="name_input4" class="text-black font-bold">Birds</p>
+              </button>
             </div>
             <!-- button section end  -->
           </div>
@@ -173,7 +183,7 @@
             <!-- picture adding container after clicked -->
             <div>
               <div
-                class="card bg-base-100 w-96 shadow-xl grid grid-cols-2 gap-2 h-full"
+                class="card bg-base-100 shadow-xl grid grid-cols-2 gap-2 h-3/6"
               >
                 <div
                   id="after_clicked_add_picture"

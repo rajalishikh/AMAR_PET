@@ -1,3 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
+.special333 {
+  background-color: #0e7a81;
+  border: #0e7a811a;
+  border-radius: 25px;
+  color: white;
+}
