@@ -148,18 +148,19 @@ const bring_data_name=async(animal_name)=>{
     
     console.log(unique_animal_details)
     const crete_element=document.createElement("div")
-    // set the inner html
+    // set the inner html of animal details 
     crete_element.innerHTML=`
     <div class="card bg-base-100 w-80 shadow-xl my-hr h-auto">
                 <figure class="px-10 pt-10">
                   <img
-                    src=""
-                    alt="Shoes"
+                    src="${unique_animal_details?.image}"
+                    alt="Animal"
                     class="rounded-xl"
                   />
                 </figure>
                 <div class="card-body">
-                  <h2 class="text-black font-bold text-left text-xl"></h2>
+                  <h2 class="text-black font-bold text-left text-xl">
+                  ${unique_animal_details?.pet_name?`${unique_animal_details?.pet_name}`:"Undefined"}</h2>
               <!-- first  card -->
                   <div class="flex items-center gap-1">
                   <div>
@@ -171,7 +172,7 @@ const bring_data_name=async(animal_name)=>{
                     />
                   </div>
                   <div>
-                    <p class="text-[#131313B3]">Breed::"No Information Available"}</p>
+                    <p class="text-[#131313B3]">Breed:${unique_animal_details?.breed?`${unique_animal_details?.breed}`:"Undefined"}</p>
                   </div>
                 </div>
                 <!-- second card -->
@@ -185,7 +186,7 @@ const bring_data_name=async(animal_name)=>{
                     />
                   </div>
                   <div>
-                    <p class="text-[#131313B3]">Birth::"No Information Available"}</p>
+                    <p class="text-[#131313B3]">Birth:${unique_animal_details?.date_of_birth?`${unique_animal_details?.date_of_birth}`:"Undefined"} </p>
                   </div>
                 </div>
                 <!-- Third -->
@@ -199,7 +200,7 @@ const bring_data_name=async(animal_name)=>{
                     />
                   </div>
                   <div>
-                    <p class="text-[#131313B3]">:</p>
+                    <p class="text-[#131313B3]">:${unique_animal_details?.gender?`${unique_animal_details?.gender}`:"Undefined"} </p>
                   </div>
                 </div>
                 <!-- fourth -->
@@ -213,7 +214,7 @@ const bring_data_name=async(animal_name)=>{
                     />
                   </div>
                   <div>
-                    <p class="text-[#131313B3]"></p>
+                    <p class="text-[#131313B3]">${unique_animal_details?.price?`${unique_animal_details?.price}`:"Undefined"}</p>
                   </div>
                 </div>
                   <hr width="100%" />
