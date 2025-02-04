@@ -126,6 +126,7 @@ buttons.forEach((item)=>{
 
 // bring the data bye id 
 const bring_data_id=async(id)=>{
+  utility_add("no_data_found")
   const load_data_id=await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`);
   const json_load_data=await load_data_id.json()
   console.log(json_load_data.petData.category)
@@ -147,6 +148,8 @@ const bring_data_name=async(animal_name)=>{
   json_load_data_name.data.forEach(unique_animal_details=>{
     
     console.log(unique_animal_details)
+   
+    
     const crete_element=document.createElement("div")
     // set the inner html of animal details 
     crete_element.innerHTML=`
@@ -251,4 +254,13 @@ const bring_data_name=async(animal_name)=>{
     
 
   })
+}
+
+// if no data found then 
+function No_data_found(){
+  console.log("hidden")
+  const remove_hidden=document.getElementById("main_container_details")
+  remove_hidden.classList.add('hidden')
+  utility_add("main_container")
+  utility_remove("no_data_found")
 }

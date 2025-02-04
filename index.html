@@ -145,7 +145,7 @@
               </button>
               <!-- fourth -->
               <button
-                onclick="bring_data_id(4)"
+                onclick="No_data_found()"
                 class="active flex items-center justify-center p-3 border border-[#0E7A8126] rounded-md"
               >
                 <img
@@ -186,6 +186,32 @@
               id="main_container_details"
               class="w-3/4 mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 hidden"
             ></div>
+            <!-- if no data  found  -->
+            <div id="no_data_found" class="w-3/4 mb-4 grid grid-cols-1 hidden">
+              <!-- no data found div -->
+              <div class="flex justify-center">
+                <div class="card bg-base-100 w-full shadow-xl">
+                  <figure class="px-10 pt-10">
+                    <img
+                      src="images/error.webp"
+                      alt="Shoes"
+                      class="rounded-xl"
+                    />
+                  </figure>
+                  <div class="card-body items-center text-center">
+                    <h2 class="card-title text-black font-bold">
+                      No Information Available
+                    </h2>
+                    <p>
+                      It is a long established fact that a reader will be
+                      distracted by the readable content of a page when looking
+                      at its layout. The point of using Lorem Ipsum is that it
+                      has a.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <!-- picture adding container after clicked -->
             <div>
               <div
@@ -267,6 +293,7 @@
       </footer>
     </footer>
     <!-- scripting part -->
+    <script src="./insert2.js"></script>
     <script src="./insex.js"></script>
   </body>
 </html>
