@@ -139,12 +139,13 @@ const bring_data_name=async(animal_name)=>{
   // hidden section
   const hidden_all=document.getElementById('main_container')
   hidden_all.classList.add("hidden")
-  // remove the hidden section
+  // remove the hidden section in main container
   const remove_hidden=document.getElementById("main_container_details")
+  remove_hidden.innerHTML=''
   remove_hidden.classList.remove('hidden')
   // run the for each function
   json_load_data_name.data.forEach(unique_animal_details=>{
-    const remove_hidden2=document.getElementById("main_container_details")
+    
     console.log(unique_animal_details)
     const crete_element=document.createElement("div")
     // set the inner html
@@ -244,7 +245,9 @@ const bring_data_name=async(animal_name)=>{
     
     `
     // append the child 
-    remove_hidden2.appendChild(crete_element)
+    
+    remove_hidden.appendChild(crete_element)
+    
 
   })
 }
