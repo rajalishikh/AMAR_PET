@@ -6,7 +6,7 @@ const bring_data=async()=>{
     
     
     convert_json.pets.slice(0,9).forEach((pet)=>{
-        console.log(pet)
+        // console.log(pet)
         const get_container=document.getElementById('main_container')
         const crete_div=document.createElement('div')
         crete_div.innerHTML=`
@@ -111,11 +111,14 @@ const bring_data=async()=>{
 // call the function
 bring_data()
 
-// load data bye id 
-const bring_load_data_id=async(id)=>{
-  const data_category=await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`)
-  const data_category_convert_json=await data_category.json()
-  let name_category= data_category_convert_json.petData.category
-  console.log(name_category)
-
-}
+// show the button active 
+const buttons = document.querySelectorAll(".active");
+console.log(buttons)
+buttons.forEach((item)=>{
+  
+  item.addEventListener("click",()=>{
+    buttons.forEach((item2)=>item2.classList.remove("special"))
+    item.classList.add('special')
+    
+  })
+})
