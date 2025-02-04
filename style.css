@@ -2,7 +2,6 @@ html {
   scroll-behavior: smooth;
 }
 .special {
-  background-color: #0e7a81;
-  border: #0e7a811a;
-  border-radius: 25px;
+  background-color: #0e7a811a;
+  border-radius: 55px;
 }
