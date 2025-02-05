@@ -80,6 +80,8 @@ const bring_data=async()=>{
 
                   <div class="card-actions">
                     <button
+                    onclick="addPicture(${pet.petId})"
+
                       class="btn btn-primary bg-white border border-[#0E7A8126] w-20 text-[#0E7A81]"
                     >
                       <img
@@ -147,7 +149,7 @@ const bring_data_name=async(animal_name)=>{
   // run the for each function
   json_load_data_name.data.forEach(unique_animal_details=>{
     
-    console.log(unique_animal_details)
+    // console.log(unique_animal_details)
    
     
     const crete_element=document.createElement("div")
@@ -224,6 +226,7 @@ const bring_data_name=async(animal_name)=>{
 
                   <div class="card-actions">
                     <button
+                     onclick="addPicture(${unique_animal_details.petId})"
                       class="btn btn-primary bg-white border border-[#0E7A8126] w-20 text-[#0E7A81]"
                     >
                       <img
@@ -263,4 +266,12 @@ function No_data_found(){
   remove_hidden.classList.add('hidden')
   utility_add("main_container")
   utility_remove("no_data_found")
+}
+
+// add pic in another section 
+const addPicture=async(id_for_image)=>{
+  console.log("Add image",id_for_image)
+  const bring_data_add_image=await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id_for_image}`)
+  const convert_add_image_data=await bring_data_add_image.json()
+  console.log("Add image in another section",convert_add_image_data.petData)
 }
