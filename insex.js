@@ -95,6 +95,7 @@ const bring_data=async()=>{
                       />
                     </button>
                     <button
+                      onclick="show_count_down()"
                       class="btn btn-primary bg-white border border-[#0E7A8126] w-20 text-[#0E7A81] hover:text-white"
                     >
                       Adopt
@@ -234,6 +235,7 @@ const sorting_price=async()=>{
                     />
                   </button>
                   <button
+                  onclick="show_count_down()"
                     class="btn btn-primary bg-white border border-[#0E7A8126] w-20 text-[#0E7A81] hover:text-white"
                   >
                     Adopt
@@ -389,6 +391,7 @@ const bring_data_name=async(animal_name)=>{
                       />
                     </button>
                     <button
+                      onclick="show_count_down()"
                       class="btn btn-primary bg-white border border-[#0E7A8126] w-20 text-[#0E7A81] hover:text-white"
                     >
                       Adopt
@@ -560,6 +563,9 @@ const show_modal_details=async(load_modal)=>{
 
 }
 
+function show_count_down(){
+  console.log("show the timer")
+}
 
 function loading(isLOading){
   console.log("is data is loading",isLOading)
