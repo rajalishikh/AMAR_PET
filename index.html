@@ -174,19 +174,19 @@
             </div>
           </div>
           <!-- best deals end  -->
-          <!-- main container box  -->
+          <!-- main container box for all image and different types -->
           <div class="flex-col-1 md:flex-col-1 lg:flex gap-4">
             <!-- all animal details -->
             <div
               id="main_container"
               class="w-auto md:w-auto lg:w-3/4 mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
             ></div>
-            <!-- animal details unique -->
+            <!-- animal details by dog,cat,Rabbits,birds, -->
             <div
               id="main_container_details"
               class="w-auto md:w-auto lg:w-3/4 mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 hidden"
             ></div>
-            <!-- if no data  found  -->
+            <!-- if no data  found then we show the details -->
             <div
               id="no_data_found"
               class="w-auto md:w-auto lg:w-3/4 mb-4 grid grid-cols-1 hidden"
@@ -216,7 +216,6 @@
               </div>
             </div>
             <!-- picture adding container after clicked -->
-
             <div
               class="card bg-base-100 shadow-xl h-auto w-auto md:w-auto lg:w-96"
             >
@@ -227,6 +226,27 @@
             </div>
           </div>
         </div>
+      </section>
+      <!-- section details and show modal -->
+      <section>
+        <dialog id="show_details" class="modal">
+          <div class="modal-box w-11/12 max-w-5xl">
+            <!-- container modal -->
+            <div id="container_modal">
+              <div></div>
+            </div>
+            <div class="w-full">
+              <form method="dialog">
+                <!-- if there is a button, it will close the modal -->
+                <button
+                  class="w-full p-2 bg-[#0E7A8133] rounded-xl text-[#0E7A81] font-bold"
+                >
+                  Cancel
+                </button>
+              </form>
+            </div>
+          </div>
+        </dialog>
       </section>
     </section>
     <!-- footer section -->

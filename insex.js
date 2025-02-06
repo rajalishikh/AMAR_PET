@@ -3,10 +3,8 @@ console.log('javaScript part start')
 const bring_data=async()=>{
     const load_data=await fetch('https://openapi.programming-hero.com/api/peddy/pets')
     const convert_json=await load_data.json()
-    
-   
-    convert_json.pets.slice(0,9).forEach((pet)=>{
-        // console.log(pet)
+        convert_json.pets.slice(0,9).forEach((pet)=>{
+        // console.log("pet data",pet)
         const get_container=document.getElementById('main_container')
         const crete_div=document.createElement('div')
         crete_div.innerHTML=`
@@ -98,6 +96,7 @@ const bring_data=async()=>{
                       Adopt
                     </button>
                     <button
+                     onclick="show_modal_details(${pet.petId})"
                       class="btn btn-primary bg-white border border-[#0E7A8126] w-20 text-[#0E7A81] hover:text-white"
                     >
                       Details
@@ -114,7 +113,7 @@ const bring_data=async()=>{
 // call the function
 bring_data()
 
-// show the button active 
+// show the button active Element of button
 const buttons = document.querySelectorAll(".active");
 
 buttons.forEach((item)=>{
@@ -132,7 +131,7 @@ const bring_data_id=async(id)=>{
   utility_add("no_data_found")
   const load_data_id=await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`);
   const json_load_data=await load_data_id.json()
-  console.log(json_load_data.petData.category)
+  // console.log("Bring data by id",json_load_data.petData.category)
   bring_data_name(json_load_data.petData.category)
 }
 // bring data by name 
@@ -140,6 +139,7 @@ const bring_data_name=async(animal_name)=>{
   let x= animal_name.toLowerCase()
   const load_data_name=await fetch(`https://openapi.programming-hero.com/api/peddy/category/${x}`);
   const json_load_data_name=await load_data_name.json()
+  // console.log("bring data by name",json_load_data_name)
   // hidden section
   const hidden_all=document.getElementById('main_container')
   hidden_all.classList.add("hidden")
@@ -149,11 +149,9 @@ const bring_data_name=async(animal_name)=>{
   remove_hidden.classList.remove('hidden')
   // run the for each function
   json_load_data_name.data.forEach(unique_animal_details=>{
+    console.log("Data by name",unique_animal_details)
     
-    // console.log(unique_animal_details)
-   
-    
-    const crete_element=document.createElement("div")
+  const crete_element=document.createElement("div")
     // set the inner html of animal details 
     crete_element.innerHTML=`
     <div class="card bg-base-100 w-80 shadow-xl my-hr h-auto">
@@ -244,6 +242,8 @@ const bring_data_name=async(animal_name)=>{
                       Adopt
                     </button>
                     <button
+                    onclick="show_modal_details(${unique_animal_details.petId})"
+                     
                       class="btn btn-primary bg-white border border-[#0E7A8126] w-20 text-[#0E7A81] hover:text-white"
                     >
                       Details
@@ -287,4 +287,103 @@ const addPicture=async(id_for_image)=>{
   crete_div.appendChild(create_image)
   image_container.appendChild(crete_div)
  
+}
+
+// show modal details 
+
+const show_modal_details=async(load_modal)=>{
+  const load_data=await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${load_modal}`)
+    const convertData=await load_data.json()
+  console.log(convertData)
+  show_details.showModal()
+  
+  const bring_container=document.getElementById("container_modal")
+  bring_container.innerHTML=''
+  const create_div=document.createElement("div")
+  create_div.innerHTML=`
+  <div>
+              <figure class="flex justify-center px-10 pt-10">
+                <img
+                  src="${convertData?.petData.image}"
+                  alt="Animal"
+                  class="rounded-xl w-full"
+                  
+                />
+              </figure>
+              <div class="card-body">
+                <h2 class="text-black font-bold text-left text-xl">
+                ${convertData?.petData.pet_name?`${convertData?.petData?.pet_name}`:"Undefined"}</h2>
+            <!-- first  card -->
+                <div class="flex items-center gap-1">
+                <div>
+                  <img
+                    class="w-9"
+                    src="images/fox_1984462.png"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div>
+                  <p class="text-[#131313B3]">Breed:${convertData?.petData?.breed?`${convertData?.petData?.breed}`:"Undefined"}</p>
+                </div>
+              </div>
+              <!-- second card -->
+              <div class="flex items-center gap-1">
+                <div>
+                  <img
+                    class="w-9"
+                    src="images/calendar_747310.png"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div>
+                  <p class="text-[#131313B3]">Birth:${convertData?.petData?.date_of_birth?`${convertData?.petData?.date_of_birth}`:"Undefined"} </p>
+                </div>
+              </div>
+              <!-- Third -->
+              <div class="flex items-center gap-1">
+                <div>
+                  <img
+                    class="w-9"
+                    src="images/icons8-gender-50.png"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div>
+                  <p class="text-[#131313B3]">:${convertData?.petData?.gender?`${convertData?.petData?.gender}`:"Undefined"} </p>
+                </div>
+              </div>
+              <!-- fourth -->
+              <div class="flex items-center gap-1">
+                <div>
+                  <img
+                    class="w-9"
+                    src="images/icons8-price.gif"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div>
+                  <p class="text-[#131313B3]">${convertData?.petData?.price?`${convertData?.petData?.price}`:"Undefined"}</p>
+                </div>
+              </div>
+                <hr width="100%" />
+                <p>
+                Details Information: </br>
+                ${convertData?.petData.pet_details}
+
+                </p>
+
+                
+              </div>
+            </div>
+  
+  `
+  
+  
+  
+  bring_container.appendChild(create_div)
+
 }
