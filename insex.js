@@ -1,8 +1,10 @@
-console.log('javaScript part start')
+
 // bring the data
 const bring_data=async()=>{
+  
     const load_data=await fetch('https://openapi.programming-hero.com/api/peddy/pets')
     const convert_json=await load_data.json()
+    
         convert_json.pets.slice(0,9).forEach((pet)=>{
         // console.log("pet data",pet)
         const get_container=document.getElementById('main_container')
@@ -108,10 +110,18 @@ const bring_data=async()=>{
         `
         get_container.appendChild(crete_div)
         
+        
+        
+        
     })
+    loading(false); 
+
 }
 // call the function
-bring_data()
+setTimeout(()=>{
+  bring_data()
+},3000)
+
 
 // show the button active Element of button
 const buttons = document.querySelectorAll(".active");
@@ -133,6 +143,7 @@ const bring_data_id=async(id)=>{
   const json_load_data=await load_data_id.json()
   // console.log("Bring data by id",json_load_data.petData.category)
   bring_data_name(json_load_data.petData.category)
+  
 }
 // bring data by name 
 const bring_data_name=async(animal_name)=>{
@@ -147,7 +158,7 @@ const bring_data_name=async(animal_name)=>{
   const remove_hidden=document.getElementById("main_container_details")
   remove_hidden.innerHTML=''
   remove_hidden.classList.remove('hidden')
-  // run the for each function
+  // run the for each function..............................................
   json_load_data_name.data.forEach(unique_animal_details=>{
     console.log("Data by name",unique_animal_details)
     
@@ -257,8 +268,13 @@ const bring_data_name=async(animal_name)=>{
     
     remove_hidden.appendChild(crete_element)
     
+    
 
   })
+  loading2(false)
+  
+  
+  
 }
 
 // if no data found then 
@@ -401,4 +417,16 @@ const show_modal_details=async(load_modal)=>{
   
   bring_container.appendChild(create_div)
 
+}
+
+
+function loading(isLOading){
+  console.log("is data is loading",isLOading)
+  const spinner=document.getElementById("spinner")
+  if(isLOading){
+    spinner.classList.remove("hidden")
+    
+  }else{
+    spinner.classList.add("hidden")
+  }
 }
