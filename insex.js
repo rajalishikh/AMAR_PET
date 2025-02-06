@@ -138,6 +138,12 @@ const sorting_price=async()=>{
     get_container.classList.add('hidden')
     const get_container2=document.getElementById('main_container_sort_details')
     get_container2.classList.remove("hidden")
+    // hidden different animal part
+    const different_information=document.getElementById("main_container_details")
+    different_information.classList.add("hidden")
+    // no data section hidden 
+    const no_data_information=document.getElementById("no_data_found")
+    no_data_information.classList.add("hidden")
     // after slicing
     sorted.slice(0,9).forEach((pet)=>{
       console.log("pet data",pet)
@@ -289,6 +295,10 @@ const bring_data_name=async(animal_name)=>{
   const remove_hidden=document.getElementById("main_container_details")
   remove_hidden.innerHTML=''
   remove_hidden.classList.remove('hidden')
+  // hidden the animal sort data 
+  const hidden_sort_container=document.getElementById("main_container_sort_details")
+  hidden_sort_container.classList.add("hidden")
+  
   // run the for each function..............................................
   json_load_data_name.data.forEach(unique_animal_details=>{
     console.log("Data by name",unique_animal_details)
