@@ -281,9 +281,10 @@ const addPicture=async(id_for_image)=>{
   
   const image_container=document.getElementById("after_clicked_add_picture")
   const crete_div=document.createElement("div")
-  const crete_image=document.createElement("img")
-  crete_image.src=`${convert.petData.image}`
-  crete_div.appendChild(crete_image)
+  const create_image=document.createElement("img")
+  create_image.className="img-name"
+  create_image.src=`${convert.petData.image}`
+  crete_div.appendChild(create_image)
   image_container.appendChild(crete_div)
  
 }
