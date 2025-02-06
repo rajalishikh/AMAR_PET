@@ -352,10 +352,25 @@ const show_modal_details=async(load_modal)=>{
                   />
                 </div>
                 <div>
-                  <p class="text-[#131313B3]">:${convertData?.petData?.gender?`${convertData?.petData?.gender}`:"Undefined"} </p>
+                  <p class="text-[#131313B3]">Gender:${convertData?.petData?.gender?`${convertData?.petData?.gender}`:"Undefined"} </p>
                 </div>
               </div>
               <!-- fourth -->
+              <div class="flex items-center gap-1">
+                <div>
+                  <img
+                    class="w-9"
+                    src="images/icons8-gender-50.png"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div>
+                  <p class="text-[#131313B3]">vaccinated_status:${convertData?.petData?.vaccinated_status
+                    ?`${convertData?.petData?.vaccinated_status}`:"Undefined"} </p>
+                </div>
+              </div>
+              <!-- five -->
               <div class="flex items-center gap-1">
                 <div>
                   <img
@@ -366,7 +381,7 @@ const show_modal_details=async(load_modal)=>{
                   />
                 </div>
                 <div>
-                  <p class="text-[#131313B3]">${convertData?.petData?.price?`${convertData?.petData?.price}`:"Undefined"}</p>
+                  <p class="text-[#131313B3]">price: ${convertData?.petData?.price?`${convertData?.petData?.price}`:"Undefined"}</p>
                 </div>
               </div>
                 <hr width="100%" />
