@@ -11,11 +11,12 @@ const bring_data=async()=>{
         const crete_div=document.createElement('div')
         crete_div.innerHTML=`
         <div class="card bg-base-100 w-80 shadow-xl my-hr h-auto">
-                <figure class="px-10 pt-10">
+                <figure  class="name_pic px-10 pt-10">
                   <img
                     src="${pet.image}"
                     alt="Shoes"
                     class="rounded-xl"
+                    id="image_load"
                   />
                 </figure>
                 <div class="card-body">
@@ -156,11 +157,12 @@ const bring_data_name=async(animal_name)=>{
     // set the inner html of animal details 
     crete_element.innerHTML=`
     <div class="card bg-base-100 w-80 shadow-xl my-hr h-auto">
-                <figure class="px-10 pt-10">
+                <figure class=" px-10 pt-10">
                   <img
                     src="${unique_animal_details?.image}"
                     alt="Animal"
                     class="rounded-xl"
+                     id="image_load"
                   />
                 </figure>
                 <div class="card-body">
@@ -268,10 +270,20 @@ function No_data_found(){
   utility_remove("no_data_found")
 }
 
-// add pic in another section 
+// add pic in another section  dynamic 
+
 const addPicture=async(id_for_image)=>{
   console.log("Add image",id_for_image)
-  const bring_data_add_image=await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id_for_image}`)
-  const convert_add_image_data=await bring_data_add_image.json()
-  console.log("Add image in another section",convert_add_image_data.petData)
+  const bring_load_data=await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id_for_image}`)
+  const convert=await bring_load_data.json()
+  console.log(convert.petData)
+  
+  
+  const image_container=document.getElementById("after_clicked_add_picture")
+  const crete_div=document.createElement("div")
+  const crete_image=document.createElement("img")
+  crete_image.src=`${convert.petData.image}`
+  crete_div.appendChild(crete_image)
+  image_container.appendChild(crete_div)
+ 
 }

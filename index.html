@@ -175,19 +175,22 @@
           </div>
           <!-- best deals end  -->
           <!-- main container box  -->
-          <div class="flex-col-1 md:flex lg:flex gap-4">
+          <div class="flex-col-1 md:flex-col-1 lg:flex gap-4">
             <!-- all animal details -->
             <div
               id="main_container"
-              class="w-3/4 mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
+              class="w-auto md:w-auto lg:w-3/4 mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
             ></div>
             <!-- animal details unique -->
             <div
               id="main_container_details"
-              class="w-3/4 mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 hidden"
+              class="w-auto md:w-auto lg:w-3/4 mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 hidden"
             ></div>
             <!-- if no data  found  -->
-            <div id="no_data_found" class="w-3/4 mb-4 grid grid-cols-1 hidden">
+            <div
+              id="no_data_found"
+              class="w-auto md:w-auto lg:w-3/4 mb-4 grid grid-cols-1 hidden"
+            >
               <!-- no data found div -->
               <div class="flex justify-center">
                 <div class="card bg-base-100 w-full shadow-xl">
@@ -213,18 +216,14 @@
               </div>
             </div>
             <!-- picture adding container after clicked -->
-            <div>
+
+            <div
+              class="card bg-base-100 shadow-xl h-auto w-auto md:w-auto lg:w-96"
+            >
               <div
-                class="card bg-base-100 shadow-xl grid grid-cols-2 gap-2 h-3/6"
-              >
-                <div
-                  id="after_clicked_add_picture"
-                  class="flex justify-center ml-8 w-48 h-24"
-                >
-                  <!-- start the container -->
-                  <img src="images/error.webp" alt="" srcset="" />
-                </div>
-              </div>
+                id="after_clicked_add_picture"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2"
+              ></div>
             </div>
           </div>
         </div>
