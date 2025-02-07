@@ -1,14 +1,9 @@
 
-// bring the data
-
 const bring_data=async()=>{
   
     const load_data=await fetch('https://openapi.programming-hero.com/api/peddy/pets')
     const convert_json=await load_data.json()
-    
         convert_json.pets.slice(0,9).forEach((pet)=>{
-        console.log("pet data",pet)
-      
         const get_container=document.getElementById('main_container')
         const crete_div=document.createElement('div')
         crete_div.innerHTML=`
@@ -114,15 +109,11 @@ const bring_data=async()=>{
         
         `
         get_container.appendChild(crete_div)
-        
-        
-        
-        
+    
     })
     loading(false); 
 
 }
-
 
 // call the function using time
 setTimeout(()=>{
@@ -255,12 +246,9 @@ const sorting_price=async()=>{
       
       `
       get_container.appendChild(crete_div)
-      
-      
-      
+ 
       
   })
-    
 
 }
 
@@ -415,14 +403,9 @@ const bring_data_name=async(animal_name)=>{
     // append the child 
     
     remove_hidden.appendChild(crete_element)
-    
-    
-
+  
   })
-  
-  
-  
-  
+
 }
 
 // if no data found then 
@@ -570,15 +553,17 @@ const show_modal_details=async(load_modal)=>{
 function show_count_down(){
   
   my_modal_5.showModal()
-  let y=3
+  
   let count_box=document.getElementById("timer")
+  let y=3
+  count_box.innerText=y
   
   let count=setInterval(count_decrement,1000)
   function count_decrement(){
-    let x= y--;
-    count_box.innerText=x
+    y=y-1;
+    count_box.innerText=y
     
-   if(x<=0){
+   if(y===0){
       
       clearInterval(count)
       
@@ -586,21 +571,10 @@ function show_count_down(){
       container_count_modal.close()
       
     }
-    
-   
-    
-
-
+  
   }
   
- 
-
 }
-
-
-
-
-
 
 function loading(isLOading){
   console.log("is data is loading",isLOading)
