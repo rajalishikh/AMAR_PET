@@ -568,24 +568,39 @@ const show_modal_details=async(load_modal)=>{
 }
 
 function show_count_down(){
+  
   my_modal_5.showModal()
   let y=3
   let count_box=document.getElementById("timer")
+  
   let count=setInterval(count_decrement,1000)
   function count_decrement(){
-    let x=y--;
+    let x= y--;
     count_box.innerText=x
-    if(y<0){
+    
+   if(x<=0){
+      
       clearInterval(count)
+      
       const container_count_modal=document.getElementById("my_modal_5")
       container_count_modal.close()
+      
     }
+    
+   
+    
 
 
   }
+  
  
 
 }
+
+
+
+
+
 
 function loading(isLOading){
   console.log("is data is loading",isLOading)
