@@ -95,7 +95,9 @@ const bring_data=async()=>{
                       />
                     </button>
                     <button
-                      onclick="show_count_down()"
+                    id="button_disabled"
+                    
+                      onclick="show_count_down(),this.disabled=true"
                       class="btn btn-primary bg-white border border-[#0E7A8126] w-20 text-[#0E7A81] hover:text-white"
                     >
                       Adopt
@@ -235,7 +237,8 @@ const sorting_price=async()=>{
                     />
                   </button>
                   <button
-                  onclick="show_count_down()"
+                  id="button_disabled"
+                  onclick="show_count_down(),this.disabled=true"
                     class="btn btn-primary bg-white border border-[#0E7A8126] w-20 text-[#0E7A81] hover:text-white"
                   >
                     Adopt
@@ -391,7 +394,8 @@ const bring_data_name=async(animal_name)=>{
                       />
                     </button>
                     <button
-                      onclick="show_count_down()"
+                    id="button_disabled"
+                      onclick="show_count_down(),this.disabled=true"
                       class="btn btn-primary bg-white border border-[#0E7A8126] w-20 text-[#0E7A81] hover:text-white"
                     >
                       Adopt
@@ -564,7 +568,23 @@ const show_modal_details=async(load_modal)=>{
 }
 
 function show_count_down(){
-  console.log("show the timer")
+  my_modal_5.showModal()
+  let y=3
+  let count_box=document.getElementById("timer")
+  let count=setInterval(count_decrement,1000)
+  function count_decrement(){
+    let x=y--;
+    count_box.innerText=x
+    if(y<0){
+      clearInterval(count)
+      const container_count_modal=document.getElementById("my_modal_5")
+      container_count_modal.close()
+    }
+
+
+  }
+ 
+
 }
 
 function loading(isLOading){
