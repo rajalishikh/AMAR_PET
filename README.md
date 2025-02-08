@@ -16,8 +16,11 @@ Amar Pet is a user-friendly pet adoption platform that allows users to browse an
 - **Template Literals** – Implemented for dynamically generating pet cards and UI components.
 - **Async/Await & Fetch API** – Ensures smooth asynchronous data retrieval and rendering.
 
-##LiVE lINK :https://dulcet-sunflower-4f3269.netlify.app/
 
+
+## Live Link
+
+[Amar Pet](https://dulcet-sunflower-4f3269.netlify.app/)
 
 
 
