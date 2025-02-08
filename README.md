@@ -16,31 +16,8 @@ Amar Pet is a user-friendly pet adoption platform that allows users to browse an
 - **Template Literals** – Implemented for dynamically generating pet cards and UI components.
 - **Async/Await & Fetch API** – Ensures smooth asynchronous data retrieval and rendering.
 
-## Installation
+##LiVE lINK :https://dulcet-sunflower-4f3269.netlify.app/
 
-```bash
-# Clone the repository
-git clone https://github.com/your-username/amar-pet.git
 
-# Navigate to the project directory
-cd amar-pet
 
-# Install dependencies
-npm install  # or yarn install
-```
-
-## Usage
-
-```bash
-# Start the development server
-npm start  # or yarn start
-```
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
 
